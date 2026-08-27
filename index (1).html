@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Finder — Image Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <span class="eyebrow">Contact Sheet</span>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+            </svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+            </svg>
+        </button>
+    </header>
+
+    <main>
+        <h1>Frame Finder</h1>
+        <p class="subtitle">Search the Unsplash archive, frame by frame.</p>
+
+        <form id="search-form" autocomplete="off">
+            <label for="search-input" class="visually-hidden">Search for images</label>
+            <div class="search-wrapper">
+                <input type="text" id="search-input" name="q" placeholder="Search for images…" required>
+                <button id="search-button" type="submit">Search</button>
+            </div>
+            <div class="history-row" id="history-row" hidden>
+                <span class="history-label">Recent rolls</span>
+                <div class="history-list" id="history-list"></div>
+                <button type="button" id="history-clear" class="history-clear">Clear</button>
+            </div>
+        </form>
+
+        <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+
+        <div class="search-results" id="search-results"></div>
+
+        <div id="sentinel" class="sentinel"></div>
+        <p id="end-message" class="end-message" hidden>— end of roll —</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
